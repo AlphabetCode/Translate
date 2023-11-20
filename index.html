@@ -3,28 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Code Cypher</title>
+  <script>
+    const password = "8-5-12-12-15";
+
+    const enteredPassword = prompt("Enter the password to access the translator:");
+
+    if (enteredPassword !== password) {
+      alert("Incorrect password. Access denied.");
+      window.location.href = "https://www.example.com"; // Redirect to another page if the password is incorrect
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="translator">
-    <section class="section">
-      <h2>Letter to Code</h2>
-      <input type="text" id="inputText" placeholder="Enter text">
-      <div class="arrow">&#8594;</div>
-      <input type="text" id="outputText" readonly>
-      <button onclick="translateText()">Translate</button>
-    </section>
-    <section class="section">
-      <h2>Code to Letter</h2>
-      <p>Numbers must be typed in this format: "8-5-12-12-15"</p>
-      <input type="text" id="inputNumbers" placeholder="Enter numbers">
-      <div class="arrow">&#8592;</div>
-      <input type="text" id="outputNumbers" readonly>
-      <button onclick="translateNumbers()">Translate</button>
-      <p id="error" class="error-message"></p>
-    </section>
-  </div>
 
-  <script src="script.js"></script>
+<div class="translator">
+  <section class="section">
+    <h2>Letter to Code</h2>
+    <input type="text" id="inputText" placeholder="Enter text">
+    <div class="arrow">&#8594;</div>
+    <input type="text" id="outputText" readonly>
+    <button onclick="translateText()">Translate</button>
+  </section>
+  <section class="section">
+    <h2>Code to Letter</h2>
+    <p>Numbers must be typed in this format: "8-5-12-12-15"</p>
+    <input type="text" id="inputNumbers" placeholder="Enter numbers">
+    <div class="arrow">&#8592;</div>
+    <input type="text" id="outputNumbers" readonly>
+    <button onclick="translateNumbers()">Translate</button>
+    <p id="error" class="error-message"></p>
+  </section>
+</div>
+
+<script src="script.js" defer></script>
+
 </body>
 </html>
